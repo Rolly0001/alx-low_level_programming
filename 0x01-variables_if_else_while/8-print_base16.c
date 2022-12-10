@@ -4,6 +4,8 @@
 /*
  * main - prints all the numbers of base 16 in lowercase
  *
+ * Description: 'the program's description'
+ *
  * Return: Always 0 (Success)
  */
 
