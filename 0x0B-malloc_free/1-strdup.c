@@ -1,37 +1,25 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 /**
- * create_array - creates an array of chars dynamically
- * @size: size of the array
- * @c: the string
- * Return: 0 means success except defined otherwise
+ * _strdup - returns a pointer to new space
+ * @str: string
+ * Return: pointer to an array
  */
-char *create_array(unsigned int size, char c)
+char *_strdup(char *str)
 {
-	char *buffer;
-	unsigned int position;
+	char *strout;
+	unsigned int i, j;
 
-	if (size == 0)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
 
-	/*Define values with malloc*/
-	buffer = (char *) malloc(size * sizeof(c));
-
-	if (buffer == 0)
-	{
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	strout = (char *)malloc(sizeof(char) * (i + 1));
+	if (strout == NULL)
 		return (NULL);
-	}
-	else
-	{
-		position = 0;
-		while (position < size) /*While for array*/
-		{
-			*(buffer + position) = c;
-			position++;
-		}
+	for (j = 0; j <= i; j++)
+		strout[j] = str[j];
 
-		return (buffer);
-	}
+	return (strout);
 }
